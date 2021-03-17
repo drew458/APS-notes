@@ -1,0 +1,166 @@
+\documentclass[11pt]{article}
+
+
+
+
+\begin{document}
+\title{Casi d'uso}
+\author{drew}
+\maketitle
+\section{Introduzione}
+I casi d'uso sono storie scritte che descrivono il funzionamento del sistema che deve essere realizzato. Sono utili per identificare e registrare requisiti e possono fare da guida per i progetti di sviluppo (come l'OOA/D).\\
+\paragraph{Esempio}
+\textbf{Elabora Vendita:}
+Un cliente arriva alla cassa con alcuni articoli da acquistare. Il 
+cassiere utilizza il sistema POS per registrare ogni articolo 
+acquistato. Il sistema mostra il totale e i dettagli per ogni articolo. Il 
+cassiere inserisce informazioni sul pagamento, che il sistema 
+convalida e registra. Il sistema aggiorna l'inventario. Il cliente 
+riceve dal sistema una ricevuta e poi se ne va con gli articoli
+acquistati.
+\section{Attori, scenari, casi d'uso}
+Un \textbf{attore} è qualcosa o qualcuno con un certo comportamento  che interagisce con il sistema.\\
+Uno \textbf{scenario} è una sequenza specifica di interazioni tra il sistema e gli attori.\\
+Un \textbf{caso d'uso} è una collezione di scenari correlati, di successo e 
+fallimento, che descrivono un attore che usa un sistema per 
+raggiungere un obiettivo.\\
+\section{Vantaggi dei casi d'uso}
+I casi d'uso hanno molti vantaggi, tra cui l'essere uno strumento semplice comprensibile dagli utenti, una base per i test di sistema e l'essere comunque basati su scenari reali. \\
+L'unico limite è costituito dal fatto che non sono sempre applicabili.\\
+I casi d'uso sono requisiti (soprattutto funzionali) e hanno uno stile più moderno rispetto ad una più antiquata elencazione di funzioni e caratteristiche funzionali.
+\section{Tipi di Attori}
+Esistono diversi tipi di attori:
+\begin{itemize}
+	\item \textbf{Attore primario}\\
+		Usa il SuD (Sistema in Discussione) affinché vengano raggiunti degli 			obiettivi. 
+	\item \textbf{Attore finale}\\
+		Vuole raggiungere degli obiettivi
+	\item \textbf{Attore di supporto}\\
+		Offre dei servizi al SuD
+	\item \textbf{Attori fuori scena}\\
+		Ha interessi nel comportamento del SuD
+\end{itemize}
+\section{Formati comuni per i casi d'uso}
+I casi d'uso possono essere scritti in vari formati, con un grado 
+variabile di formalità e dettaglio.\\
+\begin{itemize}
+	\item formato \textbf{breve}
+	\item formato \textbf{informale}
+	\item formato \textbf{dettagliato}
+\end{itemize}
+\section{Sezioni di un caso d'uso dettagliato}
+Il preambolo contiene informazioni (opzionali) che è importante leggere prima dello scenario principale.
+\subsubsection{Portata}
+Confini del SuD.
+\subsubsection{Livello}
+Spesso livello di obiettivo utente.
+\subsubsection{Attore finale e attore primario}
+\begin{itemize}
+	\item attore finale - chi vuole raggiungere un obiettivo dall'uso del sistema
+	\item attore primario - chi vede direttamente i servizi al sistema per raggiungere quell'obiettivo
+\end{itemize} 
+\subsubsection{Parti interessate e interessi}
+Molto importante, perché suggerisce e limita ciò che deve fare il sistema.\\
+\begin{itemize}
+	\item "Il sistema concretizza un contratto tra le parti interessate, con 
+		i casi d'uso che descrivono gli aspetti comportamentali del 
+		contratto".
+\end{itemize}
+Costituisce uno strumento accurato per identificare i requisiti e valutare la loro utilità.
+\subsubsection{Pre-condizioni}
+Che cosa deve essere sempre vero prima di iniziare uno scenario
+del caso d'uso.
+\subsubsection{Garanzia di successo (post-condizioni)}
+Che cosa deve essere vero quando il caso d'uso (qualsiasi scenario) viene completato con successo.
+Deve soddisfare gli interessi di tutte le parti interessate.
+\subsubsection{Garanzia minima}
+Che cosa deve essere vero quando il caso d'uso viene completato (successo o fallimento).
+Deve proteggere gli interessi di tutte le parti interessate.
+\subsubsection{Scenario principale di successo (flusso di base)}
+Costituisce il percorso tipico di successo che soddisfa gli interessi 
+delle parti interessate – "percorso felice" o "happy path".
+Formato da una sequenza di passi, che possono essere ripetuti, e non comprende solitamente salti condizionali.
+\section{Estensioni (flussi alternativi)}
+Sono molto importanti, perché descrivono tutti i tipi di scenari (di successo o di fallimento).\\
+Costituiscono la maggior parte del testo.\\
+Le estensioni sono descritte come deviazioni (condizionali) dallo scenario che le contiene.\\
+\\
+Ogni estensione è formata da due parti:
+\begin{itemize}
+	\item \textbf{Condizione} - Qualcosa che può essere rilevato da un sistema o da un attore
+	\item \textbf{Gestione}
+		Una sequenza di uno o più passi
+\end{itemize}
+Dopo l'esecuzione di un'estensione, il controllo torna di solito allo 
+scenario principale (o allo scenario che contiene l'estensione). Sono possibili anche estensioni di estensioni.\\
+Esistono tre tipi di estensioni.
+\subsubsection{Primo tipo}
+L'attore primario vuole far procedere il caso d'uso diversamente da quanto previsto nello scenario principale di successo.\\
+In questo caso l'attore interagisce in modo diverso da quanto previsto nello scenario principale.
+\subsubsection{Secondo tipo}
+Si verifica qualcosa (ad es., un errore) per cui il caso d'uso deve procedere diversamente da quanto previsto nello scenario principale di successo.\\
+In questo caso di solito è il sistema che se ne accorge mentre esegue un'azione o effettua una validazione.
+\subsubsection{Terzo tipo}
+Un passo dello scenario principale descrive un'azione "astratta" – il caso d'uso contiene poi un'estensione di quel passo per ciascun modo "concreto" di eseguire quell'azione.
+
+\section{Scrivere in uno stile essenziale}
+\subsubsection{Linea guida}
+Nell'analisi dei requisiti, scrivi i casi d'uso in uno \textbf{stile essenziale}.\\
+Ignora l'interfaccia utente.\\
+Fai riferimento alle intenzioni degli utenti e alle responsabilità del sistema – non ad azioni concrete.
+\subsubsection{Stile essenziale}
+L'amministratore si identifica.\\
+Il sistema autentica l'identità.
+\subsubsection{Stile concreto}
+L'amministratore immette ID e password in una finestra di dialogo.\\
+Il sistema autentica l'amministratore.\\
+Il sistema mostra la finestra "edit users".
+
+\section{Scrivere in modo coinciso ma chiaro}
+\subsubsection{Linea guida}
+Scrivi i casi d'uso in modo conciso – ma allo stesso tempo chiaro e completo.\\
+Scrivi chiaramente ed esplicitamente soggetto, verbo ed eventuali frasi subordinate – verbo al tempo presente e nella forma attiva.
+\subsubsection{Ad esempio}
+Il sistema autentica l'amministratore.
+\subsubsection{E non}
+L'amministratore viene autenticato.
+
+\section{Casi d'uso a scatola nera}
+I casi d'uso più comuni sono quelli a scatola nera.\\
+Specificano cosa deve fare il sistema, senza descrivere come lo fa.\\
+Il sistema ha delle responsabilità, e collabora con gli attori, elementi che hanno altre responsabilità.\\
+Non descrivono la struttura interna del sistema, né il suo progetto.
+\subsubsection{Stile a scatola nera}
+Il sistema registra la vendita.
+\subsubsection{E non}
+Il sistema memorizza la vendita in una base di dati.\\
+Il sistema genera un comando SQL di tipo INSERT per memorizzare la vendita.
+
+\section{Livello dei casi d'uso}
+I casi d'uso possono essere scritti a livelli diversi , quindi per ciascun caso d'uso è importante capire qual è il suo livello.
+\subsection{Livello di obiettivo utente}
+Il più interessante nell'analisi dei requisiti - corrisponde ai casi d'uso EBP
+\subsection{Livello di sotto-funzione}
+Utili per mettere a fattore comune parti di casi d'uso e/o per descrivere interazioni di dettaglio.
+\subsection{Livello di sommario}
+Un caso d'uso a questo livello comprende più casi d'uso a livello di obiettivo utente – la sua durata può essere ore,  giorni, mesi o anche anni – utile per l'identificazione dei casi d'uso EPB, e per comprendere/descrivere il loro contesto.
+
+\section{Diagrammi dei casi d'uso}
+I diagrammi dei casi d'uso di UML sono una notazione grafica per mostrare i nomi dei casi d'uso e degli attori, e le loro relazioni.\\
+Sono molto meno espressivi dei casi d'uso, ma sono utili per complementare la lista attori-obiettivi e descrivere il contesto di un sistema e i suoi confini.\\
+I diagrammi dei casi d'uso sono secondari nella lavorazione dei casi d'uso.
+\subsection{Linee guida}
+\begin{itemize}
+	\item  disegna un semplice diagramma 			dei casi d'uso insieme a una lista 			attori-obiettivi.
+	\item  attento a non passare troppo 			tempo a disegnare diagrammi dei 			casi d'uso 
+\end{itemize}
+
+\section{Casi d'uso nei processi iterativi}
+I casi d'uso sono centrali in UP e in altri processi iterativi.\\
+UP incoraggia lo sviluppo guidato dai casi d'uso, in cui vengono registrati i requisiti.\\
+I casi d'uso hanno un ruolo importante della pianificazione iterativa.\\
+La progettazione è guidata dalla realizzazione dei casi d'uso.\\
+I casi d'uso influenzano l'organizzazione dei manuali d'uso .\\
+I test funzionali e di sistema possono essere basati su scenari di casi d'uso.
+
+\end{document}
