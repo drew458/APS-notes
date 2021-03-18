@@ -1,0 +1,123 @@
+\documentclass[10pt]{article}
+
+\usepackage{graphicx}
+\graphicspath{ {./images/} }
+
+\begin{document}
+
+\title{Dalla progettazione concettuale alla modellazione di dominio}
+\author{drew}
+\maketitle
+
+\textbf{Disclaimer:} la parte di modellazioni di dominio, in un compito d'esame standard, vale circa 9/30. Quindi \textbf{ATTENZIONE!!!}
+
+\section{Introduzione}
+Nell’OOA, la modellazione di dominio ha lo scopo di descrivere le informazioni della realtà di interesse secondo una rappresentazione concettuale e a oggetti.\\
+In questo contesto, la “realtà di interesse” viene chiamata “dominio del problema” . Dunque, progettazione concettuale e modellazione di dominio 
+hanno scopi simili. Vedremo anche che sono attività svolte con strumenti e metodi simili.
+
+\section{Terminologia}
+Rispetto alla progettazione concettuale di Basi di Dati, la quale è molto simile alla modellazione di dominio, la terminologia è un po' diversa.
+\begin{itemize}
+\item i diagrammi si chiamano \textbf{modelli}
+\item i formalismi per esprimere i modelli si chiamano \textbf{linguaggi} - ad esempio il linguaggio UML
+\end{itemize}
+Il risultato della modellazione di dominio è un \textbf{modello di dominio}, espresso mediante un \textbf{diagramma delle classi di UML}, usato dal punto di vista concettuale.
+\subsection{Entità e classi concettuali}
+Una \textbf{classe concettuale} rappresenta un insieme di cose o concetti con caratteristiche simili.
+\begin{center}
+\includegraphics[scale=0.5]{classe_concettuale} \\
+\end{center}
+Le relative istanze sono chiamate \textbf{istanze} o \textbf{oggetti}.
+\subsection{Attributi}
+Un \textbf{attributo} rappresenta una proprietà elementare degli oggetti di una classe.
+\begin{center}
+\includegraphics[scale=0.5]{attributi}
+\end{center}
+\subsection{Relazioni e Associazioni}
+Un'\textbf{associazione} rappresenta una relazione (una connessione significativa) tra classi
+\begin{center}
+\includegraphics[scale=0.5]{relazioni_associazioni} \\
+\end{center}
+Le istanza di un'associazione si chiamano collegamenti.\\
+Le associazioni sono in genere binarie - le N-arie sono possibili, ma poco comuni.\\
+Si possono rappresentare associazioni con attributi, ma è poco comune.\\
+Il nome è generalmente un verbo che indica una relazione.
+\subsection{Cardinalità e Molteplicità}
+Una molteplicità indica quante istanze di una classe possono essere associate a un'istanza dell'altra classe.
+\begin{center}
+\includegraphics[scale=0.5]{cardinalità_molteplicità}
+\end{center}
+\subsection{Altre differenze significative}
+Differenze significative tra ER (Entity-Relationship) e UML.\\
+UML:
+\begin{itemize}
+\item per rappresentare tutte le informazioni che devono essere gestite da un'applicazione
+\item  una classe rappresenta una classe di oggetti – ma non il 
+relativo "insieme"
+\item può essere ok avere classi che hanno un solo oggetto
+\item  può essere ok avere classi senza attributi – con cautela
+\item può essere ok avere classi che rappresentano solo comportamento – con cautela 
+\end{itemize}
+
+\section{Dalla PCBD alla MD}
+Alcune idee importanti della modellazione di dominio corrispondono (con alcune varianti) a quelle della progettazione concettuale di basi di dati
+\begin{itemize}
+\item  bisogna rappresentare le informazioni del dominio del problema – senza preoccuparsi dell'implementazione di queste 
+informazioni 
+\item  bisogna concentrarsi solo su ciò che è rilevante ai fini della descrizione del dominio del problema
+\item  le classi concettuali rappresentano classi di oggetti o fatti che hanno proprietà comuni ed esistenza autonoma
+\item   le associazioni rappresentano legami logici significativi tra due classi concettuali 
+\item gli attributi descrivono le proprietà elementari delle classi 
+concettuali
+\end{itemize}
+\subsection{Criteri generali di rappresentazione}
+I criteri generali di rappresentazione sono:
+\begin{itemize}
+\item   se un concetto ha proprietà significative e/o descrive una classe (insieme) di oggetti con esistenza autonoma, è opportuno 
+rappresentarlo come una classe concettuale 
+\item  se un concetto ha una struttura semplice e pensiamo ad esso 
+come ad un valore, è opportuno rappresentarlo come un attributo, associato alla classe concettuale a cui si riferisce
+\item  se sono state individuate due classi concettuali e c’è un concetto che le associa, questo concetto può essere rappresentato come un'associazione
+\end{itemize}
+Le \textbf{strategie} sono:
+\begin{itemize}
+\item top down
+\item bottom up
+\item inside out (a macchia d'olio)
+\item mista
+\end{itemize}
+
+\section{Esempio parziale modello di dominio}
+\begin{center}
+\includegraphics[scale=0.5]{esempio_modello_dominio}
+\end{center}
+
+\section{Oggetti di dominio}
+Un diagramma degli oggetti di dominio rappresenta, in modo visuale, un insieme di oggetti di esempio del mondo reale – nel contesto del dominio del problema.\\
+Formato da un grafo di oggetti, dove ogni nodo rappresenta un oggetto - etichettato con il nome di una classe.\\
+Ciascun oggetto è decorato con valori per gli attributi della classe.\\
+Ciascun arco rappresenta un collegamento - etichettato con il nome di un'associazione (tra quelle che collegano le classi di due oggetti).\\
+\\
+Oggetti di dominio per rappresentare uno studente Mario Rossi, nato 
+a Roma, che frequenta i corsi di SIW e APS:
+\begin{center}
+\includegraphics[scale=0.8]{esempio_oggetti_dominio}\\
+\end{center}
+Oggetti di dominio per rappresentare:
+\begin{itemize}
+\item  uno studente Mario Rossi, nato a Roma, frequenta SIW e APS
+\item  una studentessa Eva Verdi, nata a Roma, frequenta APS
+\end{itemize}
+\begin{center}
+\includegraphics[scale=0.8]{esempio_oggetti_dominio2}\\
+\end{center}
+
+
+
+
+
+
+
+
+\end{document}
