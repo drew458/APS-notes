@@ -1,0 +1,43 @@
+\documentclass[10pt]{article}
+
+\begin{document}
+
+\title{Alcune idee sui sistemi software e la loro architettura}
+\author{drew}
+\maketitle
+
+\section{Architettura a strati}
+I sistemi software sono comunemente composti da diversi elementi (classi, package, ...), che spesso vengono organizzati tramite un'architettura a strati.\\
+Un'applicazione è composta da una pila verticale di strati, che a sua volta comprende diversi package, che comprendono diverse classi.\\
+L'utente, di solito, interagisce con lo strato più alto, ovvero l'interfaccia utente. Le richieste dell'utente propagate da questo strato verso gli stati più bassi. Le risposte, a loro volta, vengono fatte risalire dagli strati più bassi a quelli più alti.\\
+Una possibile scelta (minimale ma comune) per gli strati è:
+\begin{itemize}
+\item presentazione (interfaccia utente)
+\item logica applicativa (vendita, pagamento...)
+\item accesso base di dati e altri servizi tecnici (accesso alla base di dati...)
+\end{itemize}
+Il codice è quindi organizzato a strati: le classi sono dedicate per ogni strato.\\
+
+\section{Sullo strato della logica applicativa}
+Alcune strategie principali per l'organizzazione dello strato della logica applicativa
+\subsection{Approccio transazionale}
+I dati sono gestiti in una base di dati, quindi le operazioni sono transazioni sulla base di dati – ciascun oggetto/classe della logica applicativa corrisponde a una procedura/transazione che l'utente può richiedere al sistema.
+\subsection{Approccio procedurale}
+I dati sono gestiti in memoria principale, quindi alcuni oggetti sono usati per rappresentare dati/informazioni e altri oggetti (separati) definiscono le operazioni che possono essere applicate alle informazioni.
+\subsection{Domain Model}
+Questo strato della logica applicativa è realizzato a oggetti, che si ripartiscono la responsabilità del sistema - la maggior parte degli oggetti di dominio incapsulano sia dati che operazioni
+\subsection{Applicazioni stand-alone e client-server}
+In generale, un'applicazione software si occupa di offrire ai suoi utenti l'esecuzione di un certo numero di \textit{funzionalità} relative alla gestione di alcune tipologie di \textit{informazioni} (\textit{dati}).\\
+Si possono distinguere due tipologie di applicazioni:
+\begin{itemize}
+\item \textbf{Applicazioni stand-alone}\\ Applicazioni mono-utente, i cui dati non sono condivisi tra utenti diversi della stessa applicazione. I dati vengono memorizzati localmente nel computer dell'utente. Un esempio è un'applicazione che permette di gestire la rubrica memorizzata su un file del computer.
+\item \textbf{Applicazioni client-server}\\ Applicazioni che possono essere usate contemporaneamente da più utenti, in rete o sul web. Queste applicazioni gestiscono in genere anche dati che devono essere condivisi da più utenti, che vengono memorizzati quindi su una base di dati dell'applicazione e non sul computer dell'utente che vi accede.  
+\end{itemize}
+
+\section{Progettazione per applicazioni client-server}
+Nella progettazione di applicazioni client-server viene introdotto un ulteriore strato, chiamato \textit{application}, tra quello di presentazione e quello della logica applicativa.\\
+L'application layer si occupa della gestione dello stato delle sessioni, ovvero gli utenti che in un momento stanno accedendo a dati nel domain layer.\\
+\\
+In pratica, nello sviluppo delle applicazioni client-server nell'analisi e progettazione, si devono fare ragionamenti opportuni (e separati) per quanto riguarda la gestione dei dati condivisi dell'applicazione e la gestione dello stato della sessione di un client. Inoltre, nella programmazione per queste applicazioni si dovranno usare delle opportune tecnologie, e si dovranno prendere in considerazione diversamente quelle parti del progetto che riguardano la gestione dei dati condivisi da quelle che riguardano la gestione dello stato della sessione.
+
+\end{document}
