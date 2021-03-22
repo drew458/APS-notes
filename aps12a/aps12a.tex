@@ -1,4 +1,5 @@
 \documentclass[10pt]{article}
+\usepackage{graphicx}
 
 \begin{document}
 
@@ -17,8 +18,31 @@ Un modello di dominio può essere realizzato in UML da un punto di vista concett
 Una \textbf{classe} rappresenta una cosa o un concetto (nel dominio di interesse), ovvero un insieme di cose o concetti (oggetti) con caratteristiche ritenute simili.\\
 Un'\textbf{associazione} rappresenta una relazione (un insieme di collegamenti) tra gli oggetti di due classi.\\
 Un attributo rappresenta una proprietà elementare (un dato) degli oggetti di una classe.
-\subsection{Esempio di (porzione) di modello di dominio}
+\subsection{Esempio (di porzione) di modello di dominio}
+\begin{center}
 \includegraphics[scale=0.5]{./images/porzionemodellodominio.jpg}
+\end{center}
+Importante notare come non un modello di dominio non mostra componenti software nè responsabilità. 
+\paragraph{} Esistono due diversi utilizzi del termine "modello di dominio" nella pratica.\\
+In UP (Unified Process) ed in questo corso il \textbf{modello di dominio} è la descrizione concettuale di oggetti del mondo di reale interesse.\\
+Nel software, un modello di dominio è lo strato software composto dalle classi software usate per rappresentare oggetti del mondo reale, anche chiamato \textbf{strato di dominio}.\\
+Il modello di dominio e lo strato di dominio danno ciascuno forma all'altro, ed è quindi questa relazione profonda tra il modello di dominio e la sua implementazione che lo rende importante.
+\section{Perchè creare un modello di dominio}
+\begin{itemize}
+\item nell'analisi
+\begin{itemize}
+\item per comprendere il dominio del sistema da realizzare e il suo vocabolario
+\item per definire un linguaggio comune che abiliti la comunicazione tra le varie parti interessate
+\end{itemize}
+\item per la progettazione
+\begin{itemize}
+\item come fonte di ispirazione per progettare lo strato del dominio
+\item per mantenere basso il salto rappresentazionale
+\item per abilitare lo sviluppo di un sistema software facilmente comprensibile, modificabile ed evolvibile
+\end{itemize}
+\end{itemize}
+
+
 
 \paragraph{•}
 
