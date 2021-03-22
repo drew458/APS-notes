@@ -5,6 +5,7 @@
 
 \title{Modellazione di dominio (prima parte)}
 \author{drew}
+\maketitle
 
 \section{Introduzione}
 Un modello di dominio è un modello concettuale a oggetti che descrive le informazioni che devono essere gestite dal sistema.\\
@@ -38,13 +39,46 @@ Il modello di dominio e lo strato di dominio danno ciascuno forma all'altro, ed 
 \begin{itemize}
 \item come fonte di ispirazione per progettare lo strato del dominio
 \item per mantenere basso il salto rappresentazionale
-\item per abilitare lo sviluppo di un sistema software facilmente comprensibile, modificabile ed evolvibile
+\item per abilitare lo sviluppo di un sistema software facilmente comprensibile, modificabile ed evolvibile, è opportuno che una porzione del sistema rifletta il modello di dominio in modo piuttosto accurato.
 \end{itemize}
 \end{itemize}
+\paragraph{} Il \textbf{salto rappresentazionale} è la distanza tra il nostro modello mentale del dominio e la rappresentazione del dominio mediante il software. La tecnologia OO riduce il salto rappresentazionale.\\
+\begin{center}
+\includegraphics[scale=0.7]{./images/saltorappresentazionalebasso}
+\end{center}
+Il salto rappresentazionale \textbf{non} deve essere nullo.
+
+\section{Astrazioni}
+In un modello di dominio, le classi concettuali sono astrazioni di 
+oggetti reali.\\
+Un'astrazione è un processo mentale che usiamo quando selezioniamo alcune caratteristiche e proprietà di un insieme di oggetti ed escludiamo altre caratteristiche che non sono rilevanti.\\
+\\
+Nella modellazione di dominio, un'astrazione particolarmente importante è l'astrazione di classificazione. Viene usata per definire un concetto come una classe di oggetti del mondo reale caratterizzati da proprietà comuni. Le proprietà simili tra un insieme di oggetti vengono quindi enfatizzate, mentre le loro differenze trascurate.\\
+\\
+Un'astrazione è applicata correttamente se le proprietà enfatizzate sono effettivamente rilevanti \emph{nel dominio di interesse}.
+
+\section{Classi concettuali , associazioni e attributi}
+Un modello di dominio è composto da classi concettuali, associazioni e attributi.
+
+\subsection{Classi concettuali}
+Una classe concettuale rappresenta un concetto - ovvero un'idea, una cosa o un oggetto.\\
+Può essere descritta tramite un \textbf{simbolo}, un'\textbf{intensione} o un'\textbf{estensione}.
+\begin{center}
+\includegraphics[scale=0.7]{./images/classeconcettuale}
+\end{center}
+Nei modelli concettuali, sono rilevanti simboli (nel diagramma) e intensioni (nel glossario).
+
+\subsubsection{Classi concettuali un UML}
+In UML una \textbf{classe} è il "descrittore per un insieme di oggetti che possiedono le stesse caratteristiche – attributi, operazioni, metodi, relazioni e comportamento".\\
+Notazione UML per le classi:\\
+\\
+\includegraphics[scale=0.5]{./images/classiconcuml}
+
+\subsubsection{Classi concettuali e oggetti concettuali}
+Le istanze di una classe cono chiamate oggetti. Le istanze di una classe concettuale sono \textbf{oggetti concettuali}. \\
+N.B.: Sono oggetti del mondo reale, non software.
 
 
-
-\paragraph{•}
 
 
 \end{document}
